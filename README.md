@@ -8,6 +8,7 @@ PoseWrangler is a simple UI to create and edit pose-driven relationships in Maya
 Opening the tool
 ---------------
 To load the tool, you can call it like so:
-
+```
 from PoseWrangler import poseWranglerUI as ui
 myWindow = ui.showUI()
+```
