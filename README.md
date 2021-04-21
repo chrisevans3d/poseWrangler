@@ -11,6 +11,6 @@ Opening the tool
 ---------------
 To load the tool, you can call it like so:
 ```
-from PoseWrangler import poseWranglerUI as ui
+from poseWrangler import poseWranglerUI as ui
 myWindow = ui.showUI()
 ```
