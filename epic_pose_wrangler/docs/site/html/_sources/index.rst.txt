@@ -1,0 +1,61 @@
+.. Pose Wrangler documentation master file, created by
+   sphinx-quickstart on Thu May 12 15:11:40 2022.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
+
+Pose Wrangler Documentation
+=========================================
+
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   overview
+   upgrading
+   mirror_mapping
+   extensions
+   api
+
+Overview
+===================================
+PoseWrangler is a tool for interfacing with Epic's MayaUERBFPlugin. The plugin is distributed by Epic Games and installed via Quixel Bridge.
+
+Versions
+-------------------------------
+
+
+1.0.0:
++++++++++++++++++++++++++++
+
+- Supports legacy scenes created with the UE4RBFSolverNode
+- Supports Maya 2018-2022
+- Provides upgrade workflow to migrate to V2
+
+2.0.0:
++++++++++++++++++++++++++++
+
+- Supports scenes created with the UERBFSolverNode
+- Multiple Driver Support
+- Initial blendshape support (WIP)
+- Supports Maya 2018-2022
+- Support for custom mirror mappings to allow for rigs with naming conventions that deviate from the default UE5 conventions
+- Fully automatable via Python and MayaPy
+- Serialization/deserialization to dictionary or JSON file
+- Support for custom extensions and context menu actions
+
+
+Contributors
+----------------------------
+
+- Chris Evans
+- Judd Simantov
+- David Corral
+- Borna Berc
+- Chris Theodosius
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

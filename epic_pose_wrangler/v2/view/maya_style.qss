@@ -1,0 +1,16 @@
+QListWidget[Log=true]{
+    background-color: #2A2A2A;
+    background-image: url("PoseWrangler:epic.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+}
+
+QPushButton[Category=true] {
+    text-align: left;
+    background-color: #707070;
+}
+
+QPushButton::hover[Category=true] {
+    text-align: left;
+    background-color: #707070;
+}

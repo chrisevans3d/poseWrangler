@@ -1,0 +1,59 @@
+Mirror Mapping
+=========================================
+
+Mirror mapping enables Pose Wrangler to support custom skeletons when mirroring RBF solvers and poses.
+
+Below is the mirror mapping for characters following the MetaHuman naming conventions:
+
+  .. code-block:: JSON
+
+    {
+        "solver_expression": "(?P<prefix>[a-zA-Z0-9]+)?(?P<side>_[lr]{1}_)(?P<suffix>[a-zA-Z0-9_]+)",
+        "transform_expression": "(?P<prefix>[a-zA-Z0-9_]+)?(?P<side>_[lr]{1}_)(?P<suffix>[a-zA-Z0-9_]+)",
+        "left": {
+            "solver_syntax": "_l_",
+            "transform_syntax": "_l_"
+            },
+        "right": {
+            "solver_syntax": "_r_",
+            "transform_syntax": "_r_"
+        }
+    }
+
+.. list-table:: Title
+   :widths: 25 50
+   :header-rows: 1
+
+   * - Key
+     - Definition
+   * - solver_expression
+     - A regular expression used to match against the solver node name
+   * - transform_expression
+     - A regular expression used to match against the transform (joint) node name
+   * - left
+     - dictionary containing the expected match for the solver_expression and |br| transform_expression
+   * - right
+     - dictionary containing the expected match for the solver_expression and |br| transform_expression
+
+
+.. note::
+    As an example if we wanted to mirror a solver called ``calf_l_UERBFSolver`` we first try to match the name
+    of the solver against the ``solver_expression``. If the match fails, you'll see an error appear in the output
+    log that the solver name doesn't match the settings defined in mirror mapping.
+
+    If the match succeeds, it will then iterate through the groups in the matchdict to determine if one of the groups
+    matches the ``solver_syntax`` for the left hand side. If it does, it will replace it with the right and vice versa.
+
+    In this case, we will end up with a matchdict that looks something like this: |br|
+    ``{"prefix": "calf", "side": "_l_", "suffix": "UERBFSolver"}`` |br|
+    The mapping will iterate through this dictionary and attempt to match each value against the ``solver_syntax`` of
+    the ``left`` and ``right`` group defined in mirror mapping. If it matches the ``left`` group it will replace the
+    ``side`` value with the ``solver_syntax`` specified in the ``right`` group resulting in the following dictionary: |br|
+    ``{"prefix": "calf", "side": "_r_", "suffix": "UERBFSolver"}`` |br|
+
+    The same thing then happens for the drivers and driven transforms associated with the solver, using ``transform_expression``
+    and ``transform_syntax`` in place of the solver.
+
+.. |br| raw:: html
+
+     <br>

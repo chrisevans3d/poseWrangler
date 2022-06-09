@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mirror Mapping &mdash; Pose Wrangler 2.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Extensions" href="extensions.html" />
+    <link rel="prev" title="Upgrading to 2.0.0" href="upgrading.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Pose Wrangler
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">2.0.0 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading.html">Upgrading to 2.0.0</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Mirror Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extensions.html">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Pose Wrangler</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Mirror Mapping</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/mirror_mapping.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="mirror-mapping">
+<h1>Mirror Mapping<a class="headerlink" href="#mirror-mapping" title="Permalink to this headline"></a></h1>
+<p>Mirror mapping enables Pose Wrangler to support custom skeletons when mirroring RBF solvers and poses.</p>
+<p>Below is the mirror mapping for characters following the MetaHuman naming conventions:</p>
+<blockquote>
+<div><div class="highlight-JSON notranslate"><div class="highlight"><pre><span></span><span class="p">{</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;solver_expression&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;(?P&lt;prefix&gt;[a-zA-Z0-9]+)?(?P&lt;side&gt;_[lr]{1}_)(?P&lt;suffix&gt;[a-zA-Z0-9_]+)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;transform_expression&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;(?P&lt;prefix&gt;[a-zA-Z0-9_]+)?(?P&lt;side&gt;_[lr]{1}_)(?P&lt;suffix&gt;[a-zA-Z0-9_]+)&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;left&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;solver_syntax&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;_l_&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;transform_syntax&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;_l_&quot;</span><span class="w"></span>
+<span class="w">        </span><span class="p">},</span><span class="w"></span>
+<span class="w">    </span><span class="nt">&quot;right&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">{</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;solver_syntax&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;_r_&quot;</span><span class="p">,</span><span class="w"></span>
+<span class="w">        </span><span class="nt">&quot;transform_syntax&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;_r_&quot;</span><span class="w"></span>
+<span class="w">    </span><span class="p">}</span><span class="w"></span>
+<span class="p">}</span><span class="w"></span>
+</pre></div>
+</div>
+</div></blockquote>
+<table class="colwidths-given docutils align-default" id="id1">
+<caption><span class="caption-text">Title</span><a class="headerlink" href="#id1" title="Permalink to this table"></a></caption>
+<colgroup>
+<col style="width: 33%" />
+<col style="width: 67%" />
+</colgroup>
+<thead>
+<tr class="row-odd"><th class="head"><p>Key</p></th>
+<th class="head"><p>Definition</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>solver_expression</p></td>
+<td><p>A regular expression used to match against the solver node name</p></td>
+</tr>
+<tr class="row-odd"><td><p>transform_expression</p></td>
+<td><p>A regular expression used to match against the transform (joint) node name</p></td>
+</tr>
+<tr class="row-even"><td><p>left</p></td>
+<td><p>dictionary containing the expected match for the solver_expression and <br> transform_expression</p></td>
+</tr>
+<tr class="row-odd"><td><p>right</p></td>
+<td><p>dictionary containing the expected match for the solver_expression and <br> transform_expression</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>As an example if we wanted to mirror a solver called <code class="docutils literal notranslate"><span class="pre">calf_l_UERBFSolver</span></code> we first try to match the name
+of the solver against the <code class="docutils literal notranslate"><span class="pre">solver_expression</span></code>. If the match fails, you’ll see an error appear in the output
+log that the solver name doesn’t match the settings defined in mirror mapping.</p>
+<p>If the match succeeds, it will then iterate through the groups in the matchdict to determine if one of the groups
+matches the <code class="docutils literal notranslate"><span class="pre">solver_syntax</span></code> for the left hand side. If it does, it will replace it with the right and vice versa.</p>
+<p>In this case, we will end up with a matchdict that looks something like this: <br>
+<code class="docutils literal notranslate"><span class="pre">{&quot;prefix&quot;:</span> <span class="pre">&quot;calf&quot;,</span> <span class="pre">&quot;side&quot;:</span> <span class="pre">&quot;_l_&quot;,</span> <span class="pre">&quot;suffix&quot;:</span> <span class="pre">&quot;UERBFSolver&quot;}</span></code> <br>
+The mapping will iterate through this dictionary and attempt to match each value against the <code class="docutils literal notranslate"><span class="pre">solver_syntax</span></code> of
+the <code class="docutils literal notranslate"><span class="pre">left</span></code> and <code class="docutils literal notranslate"><span class="pre">right</span></code> group defined in mirror mapping. If it matches the <code class="docutils literal notranslate"><span class="pre">left</span></code> group it will replace the
+<code class="docutils literal notranslate"><span class="pre">side</span></code> value with the <code class="docutils literal notranslate"><span class="pre">solver_syntax</span></code> specified in the <code class="docutils literal notranslate"><span class="pre">right</span></code> group resulting in the following dictionary: <br>
+<code class="docutils literal notranslate"><span class="pre">{&quot;prefix&quot;:</span> <span class="pre">&quot;calf&quot;,</span> <span class="pre">&quot;side&quot;:</span> <span class="pre">&quot;_r_&quot;,</span> <span class="pre">&quot;suffix&quot;:</span> <span class="pre">&quot;UERBFSolver&quot;}</span></code> <br></p>
+<p>The same thing then happens for the drivers and driven transforms associated with the solver, using <code class="docutils literal notranslate"><span class="pre">transform_expression</span></code>
+and <code class="docutils literal notranslate"><span class="pre">transform_syntax</span></code> in place of the solver.</p>
+</div>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="upgrading.html" class="btn btn-neutral float-left" title="Upgrading to 2.0.0" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="extensions.html" class="btn btn-neutral float-right" title="Extensions" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Epic Games.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -1,0 +1,204 @@
+QWidget {
+    background-color: rgb(27, 28, 30);
+    color: rgb(200, 200, 200);
+}
+
+
+QMenu {
+    background-color: rgb(4, 4, 4);
+}
+
+QMenu::item:selected {
+    background-color: rgb(50, 50, 50);
+}
+
+QWidget:disabled {
+    color: rgb(112, 117, 120);
+}
+
+QLineEdit {
+    border-radius: 2px;
+    padding-left: 7px;
+    padding-right: 7px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    selection-background-color: rgb(5, 127, 255);
+    background: rgb(4, 4, 4);
+
+}
+
+QDoubleSpinBox {
+    border-radius: 2px;
+    selection-background-color: rgb(5, 127, 255);
+    background: rgb(4, 4, 4);
+
+}
+
+QSpinBox {
+    border-radius: 2px;
+    selection-background-color: rgb(5, 127, 255);
+    background: rgb(4, 4, 4);
+
+}
+
+QComboBox {
+    background-color: #2c2d2f;
+    border-radius: 5px;
+}
+
+QScrollArea {
+    border: 2px solid rgb(9, 10, 12);
+}
+
+QFrame#background {
+    border: 2px solid rgb(9, 10, 12);
+}
+
+QListWidget {
+    background-color: rgb(15, 15, 15);
+}
+
+QListWidget[Log=true] {
+    background-color: rgb(15, 15, 15);
+    background-image: url("PoseWrangler:epic.png");
+    background-repeat: no-repeat;
+    background-position: bottom right;
+    background-attachment: fixed;
+}
+
+QFrame {
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+QTreeWidget QHeaderView:section {
+    border-style: none;
+    padding: 8px;
+    color: rgb(0, 255, 0);
+    background-color: #1e2126;
+}
+
+QPushButton {
+    border-radius: 2px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(40, 40, 40);
+}
+
+
+QPushButton:hover {
+    background: rgb(100, 100, 100);
+}
+
+QPushButton:pressed {
+    background: rgb(41, 164, 255);
+}
+
+
+QProgressBar {
+    background: rgb(50, 50, 50);
+    color: rgb(10, 10, 10);
+    border-radius: 5px;
+    border: 1px solid rgb(100, 100, 100);
+    text-align: center;
+    font-size: 11px;
+    font-weight: bold;
+}
+
+QProgressBar::chunk {
+    border-radius: 5px;
+    background: QLinearGradient(
+    x1:1,
+    y1: 0,
+    x2: 0,
+    y2: 0,
+    stop: 1 rgb(41, 164, 255),
+    stop: 0.4 rgb(5, 127, 255));
+    text-align: center;
+    font-weight: bold;
+}
+
+QScrollBar::handle:vertical {
+    background: rgb(100, 100, 100);
+    border-radius: 5px;
+}
+
+QScrollBar::sub-page:vertical {
+    border-radius: -5px;
+    background: rgb(15, 15, 15);
+}
+
+QScrollBar::add-page:vertical {
+    border-radius: -5px;
+    background: rgb(15, 15, 15);
+}
+
+QScrollBar::handle:horizontal {
+    background: rgb(100, 100, 100);
+    border-radius: 5px;
+}
+
+QScrollBar::sub-page:horizontal {
+    border-radius: -5px;
+    background: rgb(15, 15, 15);
+}
+
+QScrollBar::add-page:horizontal {
+    border-radius: -5px;
+    background: rgb(15, 15, 15);
+}
+
+QToolTip {
+    border-radius: 10px;
+    color: rgb(255, 255, 255);
+    background-color: rgb(10, 10, 10);
+    padding: 5px;
+    border: 0px;
+}
+
+QCheckBox {
+    width: 13px;
+    height: 13px;
+}
+
+QCheckBox::indicator {
+    width: 13px;
+    height: 13px;
+}
+
+QGroupBox {
+    border: 0px solid rgb(100, 100, 100);
+    border-radius: 0px;
+    padding: 10px;
+}
+
+QLabel[heading=true] {
+    background-color: rgb(50, 50, 50);
+    border-radius: 0px;
+    padding: 4px;
+}
+
+QPushButton[Category=true] {
+    text-align: left;
+    background-color: #323232;
+}
+
+QPushButton::hover[Category=true] {
+    text-align: left;
+    background-color: #323232;
+}
+
+QPushButton[LogButton=true] {
+    background-color: #323232;
+}
+
+QPushButton::hover[LogButton=true] {
+    background-color: #474646;
+}
+
+QPushButton::checked[LogButton=true] {
+    background-color: #202328;
+}

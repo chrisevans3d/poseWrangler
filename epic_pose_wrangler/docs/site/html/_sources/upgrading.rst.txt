@@ -1,0 +1,20 @@
+Upgrading to 2.0.0
+========================================
+
+When you load up Pose Wrangler with a scene that contains `UE4RBFSolverNode` you will be greeted with the new legacy
+version of PoseWrangler. This version is almost identical with the version previously available via GitHub, with the
+addition of the log window and the upgrade button.
+
+If you have the new version of the plugin available you will be presented with an option to upgrade your scene at the
+top of the Pose Wrangler window. Pressing this button will execute an upgrade script that will replace all the
+`UE4RBFSolverNode` with `UERBFSolverNode` and clean up old/redundant nodes left lingering in the scene.
+
+.. image:: /images/upgrade.png
+    :width: 800
+    :alt: UI Overview
+
+If the upgrade is successful you will be presented with the new tool window.
+
+.. image:: /images/v2.png
+    :width: 800
+    :alt: UI Overview

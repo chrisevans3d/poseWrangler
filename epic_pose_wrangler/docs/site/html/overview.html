@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>2.0.0 Overview &mdash; Pose Wrangler 2.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Upgrading to 2.0.0" href="upgrading.html" />
+    <link rel="prev" title="Pose Wrangler Documentation" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Pose Wrangler
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">2.0.0 Overview</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#ui-overview">UI Overview</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#solver-view">1) Solver View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#pose-view">2) Pose View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#driver-view">3) Driver View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#driven-transforms-blendshape-view">4) Driven Transforms / Blendshape View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#extensions-and-settings-view">5) Extensions and Settings View</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#top-menu">6) Top Menu</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#output-log">7) Output Log</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading.html">Upgrading to 2.0.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mirror_mapping.html">Mirror Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extensions.html">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Pose Wrangler</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>2.0.0 Overview</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/overview.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="overview">
+<h1>2.0.0 Overview<a class="headerlink" href="#overview" title="Permalink to this headline"></a></h1>
+<p>Version 2.0.0 is a refactor of the original Pose Wrangler. The goal of this version has been to separate the UI
+logic from the backend, enabling users to automate RBF setup via Python and create custom extensions to add new
+functionality.</p>
+<section id="ui-overview">
+<h2>UI Overview<a class="headerlink" href="#ui-overview" title="Permalink to this headline"></a></h2>
+<a class="reference internal image-reference" href="_images/overview.png"><img alt="UI Overview" src="_images/overview.png" style="width: 800px;" /></a>
+<section id="solver-view">
+<h3>1) Solver View<a class="headerlink" href="#solver-view" title="Permalink to this headline"></a></h3>
+<p>Here is where you can find a list of all the RBF solvers currently available in the scene and can edit, create, delete
+or mirror solvers.</p>
+<p>In order to make changes to the poses, drivers or driven transforms/blendshapes you need to toggle a solver into <cite>edit</cite>
+mode via the <cite>Edit Selected Solver</cite> button.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only one solver can be edited at a single time.</p>
+</div>
+</section>
+<section id="pose-view">
+<h3>2) Pose View<a class="headerlink" href="#pose-view" title="Permalink to this headline"></a></h3>
+<p>Here you can find a list of all the poses. In order to make any changes to the poses, you need to edit the corresponding solver.</p>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Most of these are self-explanatory, but is it worth noting that <cite>Mute Pose</cite> will enable and disable the pose on the
+solver via the <cite>targetEnable</cite> attribute. This means that if the RBF solver node is set to use <cite>automatic radius</cite>
+then the radius will be calculated without the influence of the muted poses.</p>
+</div>
+</section>
+<section id="driver-view">
+<h3>3) Driver View<a class="headerlink" href="#driver-view" title="Permalink to this headline"></a></h3>
+<p>2.0.0 supports multiple drivers. Here you can add/remove driver transforms.</p>
+</section>
+<section id="driven-transforms-blendshape-view">
+<h3>4) Driven Transforms / Blendshape View<a class="headerlink" href="#driven-transforms-blendshape-view" title="Permalink to this headline"></a></h3>
+<p>Here you can add/remove driven transforms and create/add blendshapes.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The blendshape workflow is currently a work in progress and may change in the future.</p>
+</div>
+</section>
+<section id="extensions-and-settings-view">
+<h3>5) Extensions and Settings View<a class="headerlink" href="#extensions-and-settings-view" title="Permalink to this headline"></a></h3>
+<p>Pose Wrangler now supports writing custom extensions for the tool that can be embedded into the UI here.
+<cite>Core Extensions</cite> are default extensions that ship with Pose Wrangler. <cite>Pose Exporter</cite> is an example of a custom
+extension used by the MetaHuman team. For more information on how these extensions work and how to create your own,
+please refer to the <a class="reference internal" href="extensions.html"><span class="doc">Extensions</span></a> page.</p>
+<p>You can also change the mirror mapping, which will allow you to specify a custom mapping if your skeleton does not
+match the default MetaHuman skeleton and the mirror solver/pose functionality is causing unexpected results.</p>
+</section>
+<section id="top-menu">
+<h3>6) Top Menu<a class="headerlink" href="#top-menu" title="Permalink to this headline"></a></h3>
+<p>Here you can import/export RBF solvers to/from a JSON file, change the theme and view the help.</p>
+</section>
+<section id="output-log">
+<h3>7) Output Log<a class="headerlink" href="#output-log" title="Permalink to this headline"></a></h3>
+<p>Displays debug, info, warning and error messages.</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="Pose Wrangler Documentation" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="upgrading.html" class="btn btn-neutral float-right" title="Upgrading to 2.0.0" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Epic Games.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

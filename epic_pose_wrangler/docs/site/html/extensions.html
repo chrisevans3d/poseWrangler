@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Extensions &mdash; Pose Wrangler 2.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="API" href="api.html" />
+    <link rel="prev" title="Mirror Mapping" href="mirror_mapping.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Pose Wrangler
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">2.0.0 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading.html">Upgrading to 2.0.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mirror_mapping.html">Mirror Mapping</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Extensions</a></li>
+<li class="toctree-l1"><a class="reference internal" href="api.html">API</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Pose Wrangler</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>Extensions</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/extensions.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="extensions">
+<h1>Extensions<a class="headerlink" href="#extensions" title="Permalink to this headline"></a></h1>
+<p>You can now create custom extensions for PoseWrangler so you can introduce new features without having to edit the
+core code base.</p>
+<p>Custom extensions can be created by inheriting from the following class:</p>
+<dl class="py class">
+<dt class="sig sig-object py" id="pose_wrangler.v2.model.base_extension.PoseWranglerExtension">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pose_wrangler.v2.model.base_extension.</span></span><span class="sig-name descname"><span class="pre">PoseWranglerExtension</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">display_view</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">api</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.model.base_extension.PoseWranglerExtension" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
+<p>Base class for extending pose wrangler with custom utilities that can be dynamically added to the UI</p>
+<dl class="py property">
+<dt class="sig sig-object py" id="pose_wrangler.v2.model.base_extension.PoseWranglerExtension.api">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">api</span></span><a class="headerlink" href="#pose_wrangler.v2.model.base_extension.PoseWranglerExtension.api" title="Permalink to this definition"></a></dt>
+<dd><p>Get the current API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Reference to the main API interface</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p><a class="reference internal" href="api.html#pose_wrangler.v2.main.UERBFAPI" title="pose_wrangler.v2.main.UERBFAPI">pose_wrangler.v2.main.UERBFAPI</a></p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pose_wrangler.v2.model.base_extension.PoseWranglerExtension.view">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">view</span></span><a class="headerlink" href="#pose_wrangler.v2.model.base_extension.PoseWranglerExtension.view" title="Permalink to this definition"></a></dt>
+<dd><p>Get the current view widget. This should be overridden by custom extensions if you wish to embed a UI for this
+extension into the main PoseWrangler UI</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>Reference to the PySide widget associated with this extension</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>QWidget or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.model.base_extension.PoseWranglerExtension.execute">
+<span class="sig-name descname"><span class="pre">execute</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">context</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.model.base_extension.PoseWranglerExtension.execute" title="Permalink to this definition"></a></dt>
+<dd><p>Generic entrypoint for executing the extension</p>
+<dl class="field-list simple">
+<dt class="field-odd">Param</dt>
+<dd class="field-odd"><p>context: pose wrangler context containing current solver and all solvers</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.model.base_extension.PoseWranglerExtension.on_context_changed">
+<span class="sig-name descname"><span class="pre">on_context_changed</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">new_context</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.model.base_extension.PoseWranglerExtension.on_context_changed" title="Permalink to this definition"></a></dt>
+<dd><p>Context event called when the current solver is set via the API</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>new_context</strong> (<em>pose_wrangler.v2.model.context.PoseWranglerContext</em><em> or </em><em>None</em>) – pose wrangler context containing current solver and all solvers</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+<p>When PoseWrangler loads up, it will automatically detect and load any classes that inherit from <code class="docutils literal notranslate"><span class="pre">PoseWranglerExtension</span></code>
+on startup.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>To make sure that your extension loads, please make sure that it is imported before you start PoseWrangler.</p>
+</div>
+<p>Example extensions can be found under <code class="docutils literal notranslate"><span class="pre">pose_wrangler.v2.extensions</span></code></p>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="mirror_mapping.html" class="btn btn-neutral float-left" title="Mirror Mapping" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="api.html" class="btn btn-neutral float-right" title="API" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Epic Games.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

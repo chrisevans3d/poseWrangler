@@ -1,0 +1,12 @@
+{
+  "solver_expression": "(?P<prefix>[a-zA-Z0-9]+)?(?P<side>_[lr]{1}_)(?P<suffix>[a-zA-Z0-9_]+)",
+  "transform_expression": "(?P<prefix>[a-zA-Z0-9_]+)?(?P<side>_[lr]{1}_)(?P<suffix>[a-zA-Z0-9_]+)",
+  "left": {
+    "solver_syntax": "_l_",
+    "transform_syntax": "_l_"
+  },
+  "right": {
+    "solver_syntax": "_r_",
+    "transform_syntax": "_r_"
+  }
+}

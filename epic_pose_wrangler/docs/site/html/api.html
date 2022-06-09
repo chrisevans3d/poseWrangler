@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>API &mdash; Pose Wrangler 2.0.0 documentation</title>
+      <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+      <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    <script src="_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Extensions" href="extensions.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="index.html" class="icon icon-home"> Pose Wrangler
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="overview.html">2.0.0 Overview</a></li>
+<li class="toctree-l1"><a class="reference internal" href="upgrading.html">Upgrading to 2.0.0</a></li>
+<li class="toctree-l1"><a class="reference internal" href="mirror_mapping.html">Mirror Mapping</a></li>
+<li class="toctree-l1"><a class="reference internal" href="extensions.html">Extensions</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">API</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#pose-wrangler-v2-main">pose_wrangler.v2.main</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">Pose Wrangler</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>API</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="_sources/api.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="api">
+<h1>API<a class="headerlink" href="#api" title="Permalink to this headline"></a></h1>
+<section id="pose-wrangler-v2-main">
+<h2>pose_wrangler.v2.main<a class="headerlink" href="#pose-wrangler-v2-main" title="Permalink to this headline"></a></h2>
+<dl class="py class">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI">
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">pose_wrangler.v2.main.</span></span><span class="sig-name descname"><span class="pre">UERBFAPI</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">view</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">parent</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">file_path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI" title="Permalink to this definition"></a></dt>
+<dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">pose_wrangler.model.api.RBFAPI</span></code></p>
+<p>Main entry point for interacting with the UERBFSolverNode and UEPoseBlenderNode</p>
+<div class="doctest highlight-default notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">pose_wrangler.v2</span> <span class="kn">import</span> <span class="n">main</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rbf_api</span> <span class="o">=</span> <span class="n">main</span><span class="o">.</span><span class="n">UERBFAPI</span><span class="p">(</span><span class="n">view</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">rbf_api</span><span class="o">.</span><span class="n">create_rbf_solver</span><span class="p">(</span><span class="n">solver_name</span><span class="o">=</span><span class="s2">&quot;ExampleSolver&quot;</span><span class="p">,</span> <span class="n">drivers</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;leg_l&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+<dl class="py attribute">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.VERSION">
+<span class="sig-name descname"><span class="pre">VERSION</span></span><em class="property"><span class="w"> </span><span class="p"><span class="pre">=</span></span><span class="w"> </span><span class="pre">'2.0.0'</span></em><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.VERSION" title="Permalink to this definition"></a></dt>
+<dd></dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.extensions">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">extensions</span></span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.extensions" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of pose wrangler extensions currently loaded</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list[<a class="reference internal" href="extensions.html#pose_wrangler.v2.model.base_extension.PoseWranglerExtension" title="pose_wrangler.v2.model.base_extension.PoseWranglerExtension">pose_wrangler.v2.model.base_extension.PoseWranglerExtension</a>]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.view">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">view</span></span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.view" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>reference to the ui QWidget</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>QtWidgets.QWidget or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.current_solver">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">current_solver</span></span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.current_solver" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>reference to the current solver</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>api.RBFNode or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.mirror_mapping">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">mirror_mapping</span></span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.mirror_mapping" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>reference to the currently loaded mirror mapping</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>mirror_mapping.MirrorMapping object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py property">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.rbf_solvers">
+<em class="property"><span class="pre">property</span><span class="w"> </span></em><span class="sig-name descname"><span class="pre">rbf_solvers</span></span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.rbf_solvers" title="Permalink to this definition"></a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>list of rbf solvers in the scene</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.create_rbf_solver">
+<span class="sig-name descname"><span class="pre">create_rbf_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solver_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">drivers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.create_rbf_solver" title="Permalink to this definition"></a></dt>
+<dd><p>Create an rbf solver node with the given name and the specified driver transforms</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>solver_name</strong> (<em>str</em>) – name of the solver node</p></li>
+<li><p><strong>drivers</strong> (<em>list</em>) – list of driver transform node names</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>RBFNode ref</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>api.RBFNode</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.delete_rbf_solver">
+<span class="sig-name descname"><span class="pre">delete_rbf_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.delete_rbf_solver" title="Permalink to this definition"></a></dt>
+<dd><p>Delete the specified solver</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.edit_solver">
+<span class="sig-name descname"><span class="pre">edit_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">edit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.edit_solver" title="Permalink to this definition"></a></dt>
+<dd><p>Edit or finish editing the specified solver. Enables pose creation/driven node changes via the ui</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>edit</strong> (<em>bool</em>) – set edit mode on or off</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.mirror_rbf_solver">
+<span class="sig-name descname"><span class="pre">mirror_rbf_solver</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.mirror_rbf_solver" title="Permalink to this definition"></a></dt>
+<dd><p>Mirror the current solver</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>mirrored solver reference</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>api.RBFNode</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.get_rbf_solver_by_name">
+<span class="sig-name descname"><span class="pre">get_rbf_solver_by_name</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solver_name</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.get_rbf_solver_by_name" title="Permalink to this definition"></a></dt>
+<dd><p>Searches the scene for an rbf solver with the given name. Case insensitive</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>solver_name</strong> (<em>str</em>) – Solver node name</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>found node or None</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>api.RBFNode or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.add_drivers">
+<span class="sig-name descname"><span class="pre">add_drivers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drivers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.add_drivers" title="Permalink to this definition"></a></dt>
+<dd><p>Add the specified drivers to the specified solver</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>drivers</strong> (<em>list</em>) – list of transform nodes</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.remove_drivers">
+<span class="sig-name descname"><span class="pre">remove_drivers</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">drivers</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.remove_drivers" title="Permalink to this definition"></a></dt>
+<dd><p>Remove the specified drivers from the specified solver</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>drivers</strong> (<em>list</em>) – list of driver transform nodes</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.add_driven_transforms">
+<span class="sig-name descname"><span class="pre">add_driven_transforms</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">driven_nodes</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.add_driven_transforms" title="Permalink to this definition"></a></dt>
+<dd><p>Add driven transforms to the specified solver</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>driven_nodes</strong> (<em>list</em>) – list of transform nodes</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+<li><p><strong>edit</strong> (<em>bool</em>) – should this transform not be connected to the pose blender output upon creation</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.remove_driven">
+<span class="sig-name descname"><span class="pre">remove_driven</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">driven_nodes</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.remove_driven" title="Permalink to this definition"></a></dt>
+<dd><p>Remove driven transforms from the specified solver</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>driven_nodes</strong> (<em>list</em>) – list of transform nodes</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.add_blendshape">
+<span class="sig-name descname"><span class="pre">add_blendshape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_mesh</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.add_blendshape" title="Permalink to this definition"></a></dt>
+<dd><p>Add an existing blendshape for the current pose</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose_name</strong> (<em>str</em>) – name of the pose the blendshape is associated with</p></li>
+<li><p><strong>mesh_name</strong> (<em>str</em>) – name of the existing blendshape mesh</p></li>
+<li><p><strong>base_mesh</strong> (<em>str</em>) – name of the mesh the blendshape mesh is derived from</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.create_blendshape">
+<span class="sig-name descname"><span class="pre">create_blendshape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mesh_name</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.create_blendshape" title="Permalink to this definition"></a></dt>
+<dd><p>Create a new blendshape for the given pose and mesh</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose_name</strong> (<em>str</em>) – name of the pose to create this blendshape for</p></li>
+<li><p><strong>mesh_name</strong> (<em>str</em>) – name of the mesh to create the blendshape from</p></li>
+<li><p><strong>edit</strong> (<em>bool</em>) – should this blendshape be edited straight away</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>name of the newly created blendshape mesh</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.delete_blendshape">
+<span class="sig-name descname"><span class="pre">delete_blendshape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.delete_blendshape" title="Permalink to this definition"></a></dt>
+<dd><p>Delete the blendshape associated with the specified pose</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose_name</strong> (<em>str</em>) – name of the pose to delete blendshapes for</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.edit_blendshape">
+<span class="sig-name descname"><span class="pre">edit_blendshape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">edit</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.edit_blendshape" title="Permalink to this definition"></a></dt>
+<dd><p>Edit or finish editing the blendshape associated with the specified pose name</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose_name</strong> (<em>str</em>) – name of the pose the blendshape is associated with</p></li>
+<li><p><strong>edit</strong> (<em>bool</em>) – True = enable editing, False =  finish editing</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.isolate_blendshape">
+<span class="sig-name descname"><span class="pre">isolate_blendshape</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">isolate</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.isolate_blendshape" title="Permalink to this definition"></a></dt>
+<dd><p>Isolate the blendshape associated with the specified pose name, disabling all other blendshapes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose_name</strong> (<em>str</em>) – name of the pose the blendshape is associated with</p></li>
+<li><p><strong>isolate</strong> (<em>bool</em>) – True = isolate the blendshape, False = reconnect all disconnected blendshapes</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.create_pose">
+<span class="sig-name descname"><span class="pre">create_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.create_pose" title="Permalink to this definition"></a></dt>
+<dd><p>Create a new pose for the specified solver</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose_name</strong> (<em>str</em>) – name of the new pose</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.delete_pose">
+<span class="sig-name descname"><span class="pre">delete_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.delete_pose" title="Permalink to this definition"></a></dt>
+<dd><p>Remove a pose from the given solver</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose_name</strong> (<em>str</em>) – name of the pose to remove</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.go_to_pose">
+<span class="sig-name descname"><span class="pre">go_to_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.go_to_pose" title="Permalink to this definition"></a></dt>
+<dd><p>Move the driver/driven transforms to the given pose</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose_name</strong> (<em>str</em>) – name of the pose</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.mirror_pose">
+<span class="sig-name descname"><span class="pre">mirror_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.mirror_pose" title="Permalink to this definition"></a></dt>
+<dd><p>Mirror a pose to the mirror of the current solver</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose_name</strong> (<em>str</em>) – name of the pose</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.mute_pose">
+<span class="sig-name descname"><span class="pre">mute_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mute</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.mute_pose" title="Permalink to this definition"></a></dt>
+<dd><p>Mute or unmute the specified pose, removing all influences of the pose from the solver.
+NOTE: This will affect the solver radius if automatic radius is enabled.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose_name</strong> (<em>str</em>) – name of the pose</p></li>
+<li><p><strong>mute</strong> (<em>bool</em>) – mute or unmute the pose</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.rename_pose">
+<span class="sig-name descname"><span class="pre">rename_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">new_pose_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.rename_pose" title="Permalink to this definition"></a></dt>
+<dd><p>Rename a pose on the given solver</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose_name</strong> (<em>str</em>) – name of the pose</p></li>
+<li><p><strong>new_pose_name</strong> (<em>str</em>) – new name of the pose</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.update_pose">
+<span class="sig-name descname"><span class="pre">update_pose</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">pose_name</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.update_pose" title="Permalink to this definition"></a></dt>
+<dd><p>Update the pose for the given solver</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>pose_name</strong> (<em>str</em>) – name of the pose to update</p></li>
+<li><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.deserialize_from_file">
+<span class="sig-name descname"><span class="pre">deserialize_from_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.deserialize_from_file" title="Permalink to this definition"></a></dt>
+<dd><p>Deserialize solvers from a specific file.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>file_path</strong> (<em>str</em>) – json file to load</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.serialize_to_file">
+<span class="sig-name descname"><span class="pre">serialize_to_file</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">file_path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solvers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.serialize_to_file" title="Permalink to this definition"></a></dt>
+<dd><p>Serialize the specified solvers to a file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>file_path</strong> (<em>str</em>) – json file to serialize</p></li>
+<li><p><strong>solvers</strong> (<em>list</em>) – list of api.RBFNode to serialize</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.deserialize">
+<span class="sig-name descname"><span class="pre">deserialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">data</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">solver_names</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.deserialize" title="Permalink to this definition"></a></dt>
+<dd><p>Deserialize and load the solvers from the data specified</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>data</strong> (<em>dict</em>) – serialized solver data</p></li>
+<li><p><strong>solver_names</strong> (<em>list</em><em>, </em><em>optional</em>) – list of solver names to load from the data</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.serialize">
+<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solvers</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.serialize" title="Permalink to this definition"></a></dt>
+<dd><p>Serialize the specified solvers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>solvers</strong> (<em>list</em>) – list of api.RBFNode to serialize</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>serialized solver data</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.load">
+<span class="sig-name descname"><span class="pre">load</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.load" title="Permalink to this definition"></a></dt>
+<dd><p>Load the default pose wrangler settings</p>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.get_context">
+<span class="sig-name descname"><span class="pre">get_context</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.get_context" title="Permalink to this definition"></a></dt>
+<dd><p>Get the current solver context</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>pose wrangler context containing the current solver and all rbf solvers</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>context.PoseWranglerContext</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.get_ui_context">
+<span class="sig-name descname"><span class="pre">get_ui_context</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.get_ui_context" title="Permalink to this definition"></a></dt>
+<dd><p>If the ui is available, return the ui context</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>ui context containing the current state of the ui</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>ui_context.PoseWranglerUIContext or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.get_extension_by_type">
+<span class="sig-name descname"><span class="pre">get_extension_by_type</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">class_ref</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.get_extension_by_type" title="Permalink to this definition"></a></dt>
+<dd><p>Get a reference to one of the loaded extensions from a class type</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>class_ref</strong> (<a class="reference internal" href="extensions.html#pose_wrangler.v2.model.base_extension.PoseWranglerExtension" title="pose_wrangler.v2.model.base_extension.PoseWranglerExtension"><em>base_extension.PoseWranglerExtension</em></a>) – reference to an extension class</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>reference to a loaded extension if one is loaded</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>base_extension.PoseWranglerExtension instance or None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.set_mirror_mapping">
+<span class="sig-name descname"><span class="pre">set_mirror_mapping</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">path</span></span><span class="o"><span class="pre">=</span></span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.set_mirror_mapping" title="Permalink to this definition"></a></dt>
+<dd><p>Set the mirror mapping from a file</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>path</strong> (<em>str</em>) – path to json mirror mapping file</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt class="sig sig-object py" id="pose_wrangler.v2.main.UERBFAPI.get_solver_edit_status">
+<span class="sig-name descname"><span class="pre">get_solver_edit_status</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">solver</span></span></em><span class="sig-paren">)</span><a class="headerlink" href="#pose_wrangler.v2.main.UERBFAPI.get_solver_edit_status" title="Permalink to this definition"></a></dt>
+<dd><p>Check if the current solver is in ‘Edit’ mode</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>solver</strong> (<em>api.RBFNode</em>) – solver reference</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True = in edit mode, False = not in edit mode</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="extensions.html" class="btn btn-neutral float-left" title="Extensions" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, Epic Games.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

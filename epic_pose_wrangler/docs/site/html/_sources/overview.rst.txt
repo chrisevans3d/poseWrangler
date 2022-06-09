@@ -1,0 +1,78 @@
+2.0.0 Overview
+=========================================
+
+Version 2.0.0 is a refactor of the original Pose Wrangler. The goal of this version has been to separate the UI
+logic from the backend, enabling users to automate RBF setup via Python and create custom extensions to add new
+functionality.
+
+UI Overview
+-------------------------------
+
+.. image:: /images/overview.png
+    :width: 800
+    :alt: UI Overview
+
+
+1) Solver View
+++++++++++++++++++++++++++++++++++++++++++++
+
+
+Here is where you can find a list of all the RBF solvers currently available in the scene and can edit, create, delete
+or mirror solvers.
+
+In order to make changes to the poses, drivers or driven transforms/blendshapes you need to toggle a solver into `edit`
+mode via the `Edit Selected Solver` button.
+
+.. note::
+
+    Only one solver can be edited at a single time.
+
+2) Pose View
+++++++++++++++++++++++++++++++++++++++++++++
+
+
+Here you can find a list of all the poses. In order to make any changes to the poses, you need to edit the corresponding solver.
+
+.. warning::
+
+    Most of these are self-explanatory, but is it worth noting that `Mute Pose` will enable and disable the pose on the
+    solver via the `targetEnable` attribute. This means that if the RBF solver node is set to use `automatic radius`
+    then the radius will be calculated without the influence of the muted poses.
+
+
+3) Driver View
+++++++++++++++++++++++++++++++++++++++++++++
+
+2.0.0 supports multiple drivers. Here you can add/remove driver transforms.
+
+
+4) Driven Transforms / Blendshape View
+++++++++++++++++++++++++++++++++++++++++++++
+
+Here you can add/remove driven transforms and create/add blendshapes.
+
+.. note::
+    The blendshape workflow is currently a work in progress and may change in the future.
+
+
+5) Extensions and Settings View
+++++++++++++++++++++++++++++++++++++++++++++
+
+Pose Wrangler now supports writing custom extensions for the tool that can be embedded into the UI here.
+`Core Extensions` are default extensions that ship with Pose Wrangler. `Pose Exporter` is an example of a custom
+extension used by the MetaHuman team. For more information on how these extensions work and how to create your own,
+please refer to the :doc:`extensions` page.
+
+You can also change the mirror mapping, which will allow you to specify a custom mapping if your skeleton does not
+match the default MetaHuman skeleton and the mirror solver/pose functionality is causing unexpected results.
+
+6) Top Menu
+++++++++++++++++++++++++++++++++++++++++++++
+
+Here you can import/export RBF solvers to/from a JSON file, change the theme and view the help.
+
+
+7) Output Log
+++++++++++++++++++++++++++++++++++++++++++++
+
+Displays debug, info, warning and error messages.

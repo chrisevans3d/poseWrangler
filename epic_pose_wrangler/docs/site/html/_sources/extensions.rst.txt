@@ -1,0 +1,23 @@
+Extensions
+=========================================
+
+You can now create custom extensions for PoseWrangler so you can introduce new features without having to edit the
+core code base.
+
+Custom extensions can be created by inheriting from the following class:
+
+.. autoclass:: pose_wrangler.v2.model.base_extension.PoseWranglerExtension
+   :members:
+   :undoc-members:
+   :show-inheritance:
+   :member-order: bysource
+
+
+When PoseWrangler loads up, it will automatically detect and load any classes that inherit from ``PoseWranglerExtension``
+on startup.
+
+.. note::
+    To make sure that your extension loads, please make sure that it is imported before you start PoseWrangler.
+
+
+Example extensions can be found under ``pose_wrangler.v2.extensions``
